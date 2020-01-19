@@ -21,7 +21,7 @@ def check_price():
 	price = soup.find(id="priceblock_dealprice").get_text()
 	converted = float(''.join( i for i in price if i.isnumeric() or i=='.'))
 
-	if converted!=2000.00:
+	if converted<2000.00:
 		send_email()
 
 	print('price=',converted)
